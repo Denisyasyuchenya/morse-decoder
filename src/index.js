@@ -50,7 +50,8 @@ function decode(expr) {
     arr2.forEach(el => {
         arr.push(el.replace(/(10)/g, '.').replace(/(11)/g, '-'));
     })
-    arr.forEach(el => (typeof(MORSE_TABLE[el]) == 'undefined') ? result.push(' ') : result.push(MORSE_TABLE[el])).join('');
+    arr.forEach(el => typeof(MORSE_TABLE[el]) == 'undefined') ? result.push(' ') : result.push(MORSE_TABLE[el]);
+    return result.join('');
     }
 
 module.exports = {
